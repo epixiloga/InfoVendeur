@@ -8,18 +8,17 @@ namespace BossMvcVendeur.Layers
 {
     public class VendeurLayer
     {
-        static public List<Vendeur> GetAll()
+        public List<Vendeur> GetAll()
         {
             using (KartinaEntities context=new KartinaEntities())
             {
                 var query = from v in context.Vendeur
                             select v;
                 return query.ToList();
-
             }
         }
 
-        static public Vendeur GetById(int id)
+        public Vendeur GetById(int id)
         {
             using (KartinaEntities context = new KartinaEntities())
             {
